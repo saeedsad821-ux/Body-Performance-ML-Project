@@ -26,8 +26,8 @@ This project takes physical metrics (such as age, height, weight, body fat %, gr
 
 1. **Clone the repository** (if you haven't already):
    ```bash
-   git clone https://github.com/your-username/body-performance-ml.git
-   cd body-performance-ml
+   git clone https://github.com/saeedsad821-ux/Body-Performance-ML-Project.git
+   cd Body-Performance-ML-Project
    ```
 
 2. **Install Dependencies**:
@@ -47,6 +47,25 @@ This project takes physical metrics (such as age, height, weight, body fat %, gr
    streamlit run app.py
    ```
    The app will be accessible at `http://localhost:8501`.
+
+## 🌐 Cloud Deployment Options
+
+### Option 1: Streamlit Community Cloud (Easiest)
+Since the app uses Streamlit and is hosted on GitHub, you can deploy it for free with one click:
+1. Go to [share.streamlit.io](https://share.streamlit.io/)
+2. Sign in with GitHub.
+3. Click **New app** and select this repository.
+4. Set the Main file path to `app.py` and click **Deploy**.
+
+### Option 2: Docker Deployment
+A `Dockerfile` is included for containerized deployment on any platform (AWS, GCP, Render, Railway, etc.).
+
+**To run using Docker locally:**
+```bash
+docker build -t body-performance-app .
+docker run -p 8501:8501 body-performance-app
+```
+The app will be live at `http://localhost:8501`.
 
 ## 🧠 Model Details
 The final model chosen is a **Neural Network (MLPClassifier)** due to its consistency and high F1-score across various test splits. The features are standardized using `StandardScaler` prior to inference.
