@@ -5,7 +5,7 @@ from sklearn.neural_network import MLPClassifier
 import joblib
 
 print("Loading data...")
-df = pd.read_csv("bodyPerformance.csv")
+df = pd.read_csv("../data/bodyPerformance.csv")
 
 # Clean duplicates
 df.drop_duplicates(inplace=True)
@@ -40,6 +40,8 @@ model = MLPClassifier(hidden_layer_sizes=(100, 50), max_iter=500, random_state=4
 model.fit(X_scaled, y)
 print(f"Training accuracy: {model.score(X_scaled, y):.4f}")
 
-joblib.dump(model, 'model.joblib')
-joblib.dump(scaler, 'scaler.joblib')
+import os
+os.makedirs('../models', exist_ok=True)
+joblib.dump(model, '../models/model.joblib')
+joblib.dump(scaler, '../models/scaler.joblib')
 print("Model and scaler saved as joblib files.")

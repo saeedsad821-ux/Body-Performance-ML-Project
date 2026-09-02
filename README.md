@@ -16,11 +16,24 @@ This project takes physical metrics (such as age, height, weight, body fat %, gr
 - **Class D:** Poor Performance
 
 ## 📂 Repository Structure
-- `body_performance_ml_project.ipynb`: Complete Jupyter Notebook containing Data Analysis (EDA), Data Preprocessing, and Model Comparisons (KNN, SVM, Decision Trees, Neural Networks).
-- `train.py`: Standalone Python script to train the chosen MLP model and export the model & scaler as `.joblib` files.
-- `app.py`: Interactive Streamlit web application for real-time predictions.
-- `requirements.txt`: Python package dependencies.
-- `bodyPerformance.csv`: The dataset used for training.
+```
+├── data/
+│   └── bodyPerformance.csv
+├── models/
+│   ├── model.joblib
+│   └── scaler.joblib
+├── notebooks/
+│   └── body_performance_ml_project.ipynb
+├── src/
+│   └── train.py
+├── app.py
+├── requirements.txt
+├── Dockerfile
+└── README.md
+```
+- **notebooks/**: Complete Jupyter Notebook containing Data Analysis (EDA), Data Preprocessing, and Model Comparisons.
+- **src/train.py**: Standalone Python script to train the chosen MLP model and export the model & scaler.
+- **app.py**: Interactive Streamlit web application for real-time predictions.
 
 ## 🚀 How to Run Locally
 
@@ -39,7 +52,7 @@ This project takes physical metrics (such as age, height, weight, body fat %, gr
 3. **Train the Model (Optional)**:
    The pre-trained model is already included (`model.joblib`), but you can retrain it:
    ```bash
-   python train.py
+   python src/train.py
    ```
 
 4. **Run the Streamlit App**:

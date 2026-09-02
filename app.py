@@ -11,8 +11,11 @@ st.write("Enter your physical measurements to predict your performance class (A,
 
 @st.cache_resource
 def load_models():
-    model = joblib.load('model.joblib')
-    scaler = joblib.load('scaler.joblib')
+    import os
+    model_path = os.path.join('models', 'model.joblib')
+    scaler_path = os.path.join('models', 'scaler.joblib')
+    model = joblib.load(model_path)
+    scaler = joblib.load(scaler_path)
     return model, scaler
 
 try:
