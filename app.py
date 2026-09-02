@@ -7,7 +7,14 @@ import joblib
 st.set_page_config(page_title="Body Performance Prediction", layout="centered")
 
 st.title("🏋️‍♂️ Body Performance Predictor")
-st.write("Enter your physical measurements to predict your performance class (A, B, C, or D), where A is the best and D is the worst.")
+
+with st.sidebar:
+    st.header("ℹ️ About")
+    st.info("This application uses a trained **Neural Network (MLP)** to predict your body performance class based on standard physical measurements.")
+    st.markdown("---")
+    st.markdown("**Classes Definition:**\n- **A:** Best Performance\n- **B:** Good Performance\n- **C:** Average Performance\n- **D:** Poor Performance")
+
+st.write("Enter your physical measurements below to predict your performance class.")
 
 @st.cache_resource
 def load_models():
